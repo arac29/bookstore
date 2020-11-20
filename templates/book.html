@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{%block title %}
+    TrueBooks
+{% endblock %}
+{% block header %}
+    <div class="p-3 mb-2 bg-dark text-white clearfix">
+        <ul class="nav justify-content-center"><span class="border border-dark">
+        <h1>Welcome to the Books Know-it-All
+        </h1>
+    </span></ul>
+   </div>
+   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="nav-link" href="">{{user_id}}<span class="sr-only"></span></a>
+    <a class="nav-link" href="{{url_for('logout')}}">Logout<span class="sr-only"></span></a>
+  </nav>
+    
+{% endblock %}
+
+{% block body %}
+<br>
+    <h3>{{book.title}} ({{book.year}})
+        <small class="text-muted"> {{book.author}} </small></h3>
+    <p>Average rating: {{rating}} </p>
+   
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+          Leave a comment
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <br>
+   <div class="card">
+    <div class="card-body">
+      Existing Review 
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{%block title %}
+    TrueBooks
+{% endblock %}
+{% block header %}
+    <div class="p-3 mb-2 bg-dark text-white clearfix">
+        <ul class="nav justify-content-center"><span class="border border-dark">
+        <h1>Welcome to the Books Know-it-All
+        </h1>
+    </span></ul>
+   </div>
+   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="nav-link" href="">{{user_id}}<span class="sr-only"></span></a>
+    <a class="nav-link" href="{{url_for('logout')}}">Logout<span class="sr-only"></span></a>
+  </nav>
+{% endblock %}
+
+{% block body %}
+ 
+    <h2 class="h-50">RESULTS </h2><br>
+    <div class="card" style="width: 38rem;">
+    {% for book in books1 %}
+    <li class="list-group-item">
+        <a href="{{url_for('bookinfo', isbn=book.isbn)}}"> {{ book.isbn }} ... {{ book. title}} - {{book.author}} ({{book.year}})</a>  
+        <br>
+    </li>
+    {% endfor %}
+    </ul>
+    </div>
+    
+    
+{% endblock %}
